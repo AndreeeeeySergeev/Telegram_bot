@@ -31,7 +31,7 @@ class Convertor:
 			raise APIException(f'Неудалось обработать количество {amount}')
 
 		r = requests.get(f'http://api.exchangeratesapi.io/v1/convert?access_key={API_KEY}&from=EUR \
-		                &to={base_ticker}&amount=3')
+		                &to={base_ticker}&amount={amount}')
 
 		total_base = json.loads(r.content)[keys[base]]
 
